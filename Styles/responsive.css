@@ -19,6 +19,10 @@
             align-items: center;
     }
 
+    #page-search-results  .card{
+            grid-template-columns: 1fr;
+    }
+
 }
 
 @media(min-width: 1700px ){
