@@ -16,7 +16,7 @@ db.serialize(() => {
             image TEXT,
             name TEXT,
             address TEXT,
-            addres2 TEXT,
+            address2 TEXT,
             state TEXT,
             city TEXT,
             items TEXT
