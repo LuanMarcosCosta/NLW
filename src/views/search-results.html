@@ -15,39 +15,33 @@
 
     <main>
 
-        <h4>
-            <strong>2 pontos
-            </strong>
-            encontrador
+    {% if total > 0 %}
+         <h4>
+            <strong> {{total}} pontos </strong> encontrados
         </h4>
 
+        
         <div class="cards">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Coletoria">
-                <h1>Colectoria</h1>
-                <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-                <p>Rio do Sul, Santa Catarina
-                    <br>
-                    Guilherme Gemballam Jardim América
-                    <br>
-                    Nº 350
-                </p>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1567393528677-d6adae7d4a0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Coletoria">
-                <h1>Paper Sider</h1>
-                <h3>Papéis e Papelão</h3>
-                <p>
-                    Rio do Sul, Santa Catarina
+            {% for place in places %} 
+              <div class="card">
+                <img src="{{ place.image }}" alt="{{ place.name }}">
+                <h1>{{ place.name }}</h1>
+                <h3>{{ place.items }}</h3>
+                <p>{{ place.city }}, {{ place.states }}
                     <br>
-                    Guilherme Gemballam Jardim América
+                    {{ place.address }}
                     <br>
-                    Nº 350
+                    {{ place.address2 }}
                 </p>
             </div>
+            {% endfor %}
 
         </div>
 
+    {%else%}}
+        <h4><strong>Nenhum</strong> Local encontrado</h4>
+    {% endif %}
+    
     </main>
 {% endblock content %}
